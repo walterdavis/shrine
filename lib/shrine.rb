@@ -669,7 +669,7 @@ class Shrine
 
         # Writes to the `<attachment>_data` attribute on the model instance.
         def write(value)
-          record.send(:"#{data_attribute}=", value)
+          record.send(:update_column, data_attribute, value)
         end
 
         # Returns the data hash of the given UploadedFile.
