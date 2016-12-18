@@ -112,7 +112,7 @@ class Shrine
         # Saves the record after assignment, skipping validations.
         def update(uploaded_file)
           super
-          record.save(validate: false)
+          record.without_versioning(:save, validate: false)
         end
 
         # If the data attribute represents a JSON column, it needs to receive a
