@@ -671,7 +671,7 @@ class Shrine
         def write(value)
           Rails.logger.info data_attribute
           Rails.logger.info record.inspect
-          record.send(:update_column, data_attribute, value)
+          record.send(:"#{data_attribute}=", value)
           Rails.logger.info record.inspect
         end
 
