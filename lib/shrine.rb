@@ -669,10 +669,7 @@ class Shrine
 
         # Writes to the `<attachment>_data` attribute on the model instance.
         def write(value)
-          Rails.logger.info data_attribute
-          Rails.logger.info record.inspect
           record.send(:"#{data_attribute}=", value)
-          Rails.logger.info record.inspect
         end
 
         # Returns the data hash of the given UploadedFile.
